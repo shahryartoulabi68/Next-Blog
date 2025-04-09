@@ -6,8 +6,6 @@ import PostRow from './PostRow'
 async function PostTable({ query }) {
     const {posts} = await getPost(query)
 
-
-
     return (
         <Table>
             <Table.Headr>

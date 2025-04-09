@@ -25,6 +25,7 @@ function CreatePostForm({ postToEdit = {} }) {
     const { title, slug, text, briefText,
         readingTime, category, coverImage,
         coverImageUrl: privcoverImageUrl } = postToEdit;
+        
     let editValues = {}
     if (isEditSession) {
         editValues = {
@@ -184,7 +185,7 @@ function CreatePostForm({ postToEdit = {} }) {
                     <Image fill alt="coverImage" src={coverImageUrl} className="object-cover object-center" />
                     <ButtonIcon className="absolute top-3 left-3" variant="red"
                         onClick={(e) => {
-                            setCoverImage(null)
+                            setCoverImageUrl(null)
                             setValue("coverImage", null)
                         }}>
                         <XMarkIcon />

@@ -1,13 +1,16 @@
 import React from 'react'
 import Header from '../components/Header'
 
-function layaout({children}) {
+
+function layaout({ children }) {
     return (
         <>
-            <Header />
-            <div className="container xl:max-w-screen-xl">
-                {children}
-            </div>
+            
+                <Header />
+                <div className="container xl:max-w-screen-xl">
+                    {children}
+                </div>
+          
         </>
     )
 }

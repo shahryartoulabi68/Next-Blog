@@ -1,5 +1,6 @@
 import http from "./httpService";
 
+
 export default async function getPostSlug(slug) {
     const res = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_URL}/post/slug/${slug}`,
@@ -11,7 +12,8 @@ export default async function getPostSlug(slug) {
 }
 
 export async function getPost(queries, options) {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/post/list?${queries}`, options)
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/post/list?${queries}`
+        , { next: { revalidate:3600 } }, options)
     const { data } = await res.json()
     const { posts, totalPages } = data || {}
     return { posts, totalPages }
@@ -31,4 +33,4 @@ export async function getPostById(id) {
 
 export async function deletePostApi(id, options) {
     return http.delete(`/post/remove/${id}`, options).then(({ data }) => data.data);
-  }
+}

@@ -1,5 +1,4 @@
 import React, { Suspense } from 'react'
-import Spinner from '@/ui/Spinner'
 import PostList from '../_components/PostList'
 import { cookies } from 'next/headers'
 import setCookiesOnReq from '@/utils/setCookiesOnReq'

@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import { Toaster } from "react-hot-toast";
 import AuthProvider from "./context/AuthContext";
 import ReactQueryProvider from "@/provider/ReactQueryProvider";
+import DarkModeProvider from "./context/DarkModeContext";
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
@@ -25,14 +26,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fa" dir="rtl" className="">
+    <html lang="fa" dir="rtl" className="dark-mode">
       <body className={`${vazirFont.variable} font-sans min-h-screen`}>
-        <Toaster />
-        <ReactQueryProvider>
-          <AuthProvider >
-            {children}
-          </AuthProvider>
-        </ReactQueryProvider>
+        <DarkModeProvider>
+          <Toaster />
+          <ReactQueryProvider>
+            <AuthProvider >
+              {children}
+            </AuthProvider>
+          </ReactQueryProvider>
+        </DarkModeProvider>
+
       </body>
     </html>
   );

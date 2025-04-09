@@ -1,5 +1,6 @@
 "use client";
 
+import DarckModeToggle from "@/ui/DarckModeToggle";
 import { useAuth } from "../context/AuthContext";
 import NavLink from "./NavLink";
 
@@ -36,13 +37,15 @@ function Header() {
               );
             })}
           </div>
-          <li>
+          <li className="flex items-center  gap-x-2">
             {user ? (
               <NavLink path="/profile">پروفایل</NavLink>
             ) : (
               <NavLink path="/signin">ورود</NavLink>
             )}
+            <DarckModeToggle />
           </li>
+         
         </ul>
       </nav>
     </header>
