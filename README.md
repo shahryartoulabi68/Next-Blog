@@ -12,8 +12,9 @@ git clone https://github.com/shahryartoulabi68/Next-Blog.git
 cd frontend
 npm install
 npm run dev
-Install backend dependencies:
 
+
+Install backend dependencies:
 bash
 Copy
 Edit
